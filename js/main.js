@@ -31,7 +31,7 @@ const DIFS=[
  {ic:'shield',t:'Segurança e qualidade',d:''},
  {ic:'support',t:'Suporte contínuo',d:''}
 ];
-const PROJ=[{n:'SpinLav',d:'Sistema web para lavanderia: o cliente solicita o serviço, agenda coleta ou retirada e acompanha o pedido online.',tech:['JavaScript','Supabase','PWA'],url:'https://spinlavtest.vercel.app/'}];
+const PROJ=[{n:'SpinLav',d:'Sistema web para lavanderia: o cliente solicita o serviço, agenda coleta ou retirada e acompanha o pedido online.',tech:['JavaScript','Supabase','PWA'],url:'https://spinlav.vercel.app/'}];
 const Projeto=p=>`<article class="card proj feat"><div class="thumb"><svg viewBox="0 0 300 180" fill="none" stroke="#00D4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="100" y="14" width="100" height="152" rx="14"/><path d="M100 46h100"/><circle cx="116" cy="30" r="3"/><circle cx="130" cy="30" r="3"/><circle cx="150" cy="106" r="36"/><path d="M122 108c9-8 15 8 28 0s19 8 28 0"/></svg></div>
 <div class="pbody"><h3>${p.n}</h3><p>${p.d}</p><div class="chips">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div><a class="link" href="${p.url}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a></div></article>`;
 

@@ -15,24 +15,24 @@ const IC={
 };
 const svg=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
 // componente reutilizável: card com ícone
-const Card=({ic,t,d,cls=''})=>`<article class="card rv ${cls}"><div class="ico">${svg(ic)}</div><h3>${t}</h3><p>${d}</p></article>`;
+const Card=({ic,t,d,cls=''})=>`<article class="card ${cls}"><div class="ico">${svg(ic)}</div><h3>${t}</h3>${d?`<p>${d}</p>`:''}</article>`;
 
 const SERVICOS=[
- {ic:'web',t:'Desenvolvimento Web',d:'Sites institucionais, portais e aplicações web rápidas, acessíveis e prontas para crescer.'},
- {ic:'mobile',t:'Desenvolvimento Mobile',d:'Aplicativos para iOS e Android com experiência fluida e integração com os seus sistemas.'},
- {ic:'sys',t:'Sistemas Empresariais',d:'ERPs, CRMs e painéis sob medida que automatizam processos e centralizam a operação.'},
- {ic:'db',t:'Banco de Dados',d:'Modelagem, migração e otimização de bancos relacionais e NoSQL, com backup e monitoramento.'},
- {ic:'cons',t:'Consultoria em TI',d:'Diagnóstico de arquitetura, escolha de tecnologias e plano de evolução para o seu time.'}
+ {ic:'web',t:'Desenvolvimento Web',d:'Sites e aplicações web rápidos e prontos para crescer.'},
+ {ic:'mobile',t:'Desenvolvimento Mobile',d:'Apps para iOS e Android integrados aos seus sistemas.'},
+ {ic:'sys',t:'Sistemas Empresariais',d:'ERPs, CRMs e painéis que automatizam a sua operação.'},
+ {ic:'db',t:'Banco de Dados',d:'Modelagem, migração e otimização com backup e monitoramento.'},
+ {ic:'cons',t:'Consultoria em TI',d:'Diagnóstico de arquitetura e plano de evolução para o seu time.'}
 ];
 const DIFS=[
- {ic:'user',t:'Soluções personalizadas',d:'Cada sistema nasce do processo do cliente, não de um modelo pronto.'},
- {ic:'team',t:'Equipe especializada',d:'Engenheiros, designers e analistas com experiência em produtos reais.'},
- {ic:'code',t:'Tecnologia moderna',d:'Cloud, APIs e arquiteturas atuais, sempre com código revisado e testado.'},
- {ic:'shield',t:'Segurança e qualidade',d:'Boas práticas de segurança, LGPD e testes automatizados em cada entrega.'},
- {ic:'support',t:'Suporte contínuo',d:'Monitoramento, correções e evolução depois do lançamento.'}
+ {ic:'user',t:'Soluções personalizadas',d:''},
+ {ic:'team',t:'Equipe especializada',d:''},
+ {ic:'code',t:'Tecnologia moderna',d:''},
+ {ic:'shield',t:'Segurança e qualidade',d:''},
+ {ic:'support',t:'Suporte contínuo',d:''}
 ];
-const PROJ=[{n:'SpinLav',d:'Sistema web para lavanderia: o cliente solicita o serviço, vê tempo e valor estimados, agenda coleta em casa ou retirada e acompanha o pedido. O painel administrativo tem agenda do dia, bloqueio de horários, aviso por WhatsApp e login com verificação em duas etapas.',tech:['JavaScript','Supabase','PostgreSQL','PWA','Vercel'],url:'https://spinlavtest.vercel.app/'}];
-const Projeto=p=>`<article class="card proj feat rv"><div class="thumb"><svg viewBox="0 0 300 180" fill="none" stroke="#00D4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="100" y="14" width="100" height="152" rx="14"/><path d="M100 46h100"/><circle cx="116" cy="30" r="3"/><circle cx="130" cy="30" r="3"/><circle cx="150" cy="106" r="36"/><path d="M122 108c9-8 15 8 28 0s19 8 28 0"/></svg></div>
+const PROJ=[{n:'SpinLav',d:'Sistema web para lavanderia: o cliente solicita o serviço, agenda coleta ou retirada e acompanha o pedido online.',tech:['JavaScript','Supabase','PWA'],url:'https://spinlavtest.vercel.app/'}];
+const Projeto=p=>`<article class="card proj feat"><div class="thumb"><svg viewBox="0 0 300 180" fill="none" stroke="#00D4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="100" y="14" width="100" height="152" rx="14"/><path d="M100 46h100"/><circle cx="116" cy="30" r="3"/><circle cx="130" cy="30" r="3"/><circle cx="150" cy="106" r="36"/><path d="M122 108c9-8 15 8 28 0s19 8 28 0"/></svg></div>
 <div class="pbody"><h3>${p.n}</h3><p>${p.d}</p><div class="chips">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div><a class="link" href="${p.url}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a></div></article>`;
 
 document.getElementById('srv').innerHTML=SERVICOS.map(s=>Card(s)).join('');
